@@ -2,16 +2,16 @@ import React, { Component } from 'react'
 
 export class NewsItem extends Component {
     render() {
-        let {title, description} = this.props;
+        let { title, description, imgUrl, newsUrl } = this.props;
         return (
-            <div>
-                <div className="card" style={{width : "18rem;"}}>
-                    <img src="https://a2.espncdn.com/combiner/i?img=%2Fphoto%2F2024%2F0409%2Fr1316285_1296x729_16%2D9.jpg" className="card-img-top" alt="..."/>
-                        <div className="card-body">
-                            <h5 className="card-title">{title}</h5>
-                            <p className="card-text">{description}</p>
-                            <a href="/" className="btn btn-primary">Go somewhere</a>
-                        </div>
+            <div className='my-3'>
+                <div className="card" style={{ width: "18rem" }}>
+                    <img src={imgUrl} className="card-img-top" alt="..." />
+                    <div className="card-body">
+                        <h5 className="card-title">{title} ....</h5>
+                        <p className="card-text">{description} ....</p>
+                        <a href={newsUrl} className="btn btn-sm btn-primary" target="_blank" rel="noreferrer">Read More</a>
+                    </div>
                 </div>
             </div>
         )
