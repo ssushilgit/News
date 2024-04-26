@@ -5,17 +5,17 @@ import PropTypes from 'prop-types'
 
 
 export class News extends Component {
-    static defaultProps = {
-        country :'in',
-        pageSize: 6,
-        category: 'general'
+    // static defaultProps = {
+    //     country :'in',
+    //     pageSize: 6,
+    //     category: 'general'
 
-    }
-    static propTypes = {
-        country: PropTypes.string,
-        pageSize: PropTypes.number,
-        category: PropTypes.string
-    }
+    // }
+    // static propTypes = {
+    //     country: PropTypes.string,
+    //     pageSize: PropTypes.number,
+    //     category: PropTypes.string
+    // }
 
     constructor() {
         super()
@@ -83,7 +83,10 @@ export class News extends Component {
                              title={element.title ? element.title.slice(0, 72) : ''}
                              description={element.description ? element.description.slice(0, 120) : ''} 
                              imgUrl={element.urlToImage} 
-                             newsUrl={element.url} />
+                             newsUrl={element.url}
+                             author={element.author}
+                             date={element.publishedAt}
+                             source={element.source.name} />
                             {/* We can use '.slice(0, 72)' to limit the display  */}
                         </div>
                     })}
