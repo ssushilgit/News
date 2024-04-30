@@ -83,7 +83,7 @@ export class News extends Component {
                 <h2 className="text-center">NewsMonkey - Top {this.capitalizeFirstLetter(this.props.category)} Headlines </h2>
                 {this.state.loading && <Spinners />}
 
-
+                {this.state.articles && (
                 <InfiniteScroll
                     dataLength={this.state.articles.length}
                     next={this.fetchMoreData}
@@ -102,13 +102,14 @@ export class News extends Component {
                                     newsUrl={element.url}
                                     author={element.author}
                                     date={element.publishedAt}
-                                    source={element.source.name} />
+                                    source={element.source.name} /> 
                                 {/* We can use '.slice(0, 72)' to limit the display  */}
                             </div>
                         })}
                     </div>
                     </div>
                 </InfiniteScroll>
+                )}
 
                 {/* <div className="container" style={{ display: 'flex', justifyContent: 'space-between' }}>
 
