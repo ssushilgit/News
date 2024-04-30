@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export class NewsItem extends Component {
-    render() {
-        let { title, description, imgUrl, newsUrl, author, date, source } = this.props;
+const NewsItem = (props) => {
+    
+        let { title, description, imgUrl, newsUrl, author, date, source } = props;
         return (
             <div className='my-3 d-flex justify-contert:cneter' >
                 <div className="card">
@@ -11,7 +11,7 @@ export class NewsItem extends Component {
                         <span className=" badge rounded-pill bg-danger" >
                             {source}
                         </span>
-                    </div>
+                    </div> 
 
                     <img src={!imgUrl ? "https://media.cnn.com/api/v1/images/stellar/prod/phishsphere2024-0418-225029-0799-alivecoverage-enhanced-nr.jpg?c=16x9&q=w_800,c_fill" : imgUrl} className="card-img-top" alt="..." />
 
@@ -24,7 +24,7 @@ export class NewsItem extends Component {
                 </div>
             </div>
         )
-    }
+    
 }
 
 export default NewsItem
